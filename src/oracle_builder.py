@@ -7,9 +7,9 @@ from qiskit import QuantumCircuit
 
 def oracle_less(number: int, qubits: int):
     """
-    Constructs a probability oracle that stores information in an ancilla about
-    whether or not a value is less than a certain number. It is hermitian, so
-    the adjoint is effectively the same operator.
+    Constructs an oracle that stores information in an ancilla about whether or 
+    not a value is less than a certain number. It is hermitian, so the adjoint 
+    is effectively the same operator.
 
     Args:
         number (int): The integer value (the specific target state) to be
@@ -18,8 +18,8 @@ def oracle_less(number: int, qubits: int):
                       considering the ancilla.
 
     Returns:
-        Gate: The Qiskit QuantumCircuit of the probability oracle "less than"
-              converted to a Gate object for it to be appended.
+        Gate: The Qiskit QuantumCircuit of the oracle "less than" converted to a
+              Gate object for it to be appended.
     """
     circuit = QuantumCircuit(qubits+1, name=f'Oracle\n x<{number}')
 
@@ -42,9 +42,9 @@ def oracle_less(number: int, qubits: int):
 
 def oracle_greatereq(number: int, qubits: int):
   """
-  Constructs a probability oracle that stores information in an ancilla about
-  whether or not a value is greater (or equal) than a certain number. It is
-  hermitian, so the adjoint is effectively the same operator.
+  Constructs an oracle that stores information in an ancilla about whether or 
+  not a value is greater (or equal) than a certain number. It is hermitian, so 
+  the adjoint is effectively the same operator.
 
   Args:
       number (int): The integer value (the specific target state) to be marked.
@@ -52,8 +52,8 @@ def oracle_greatereq(number: int, qubits: int):
                     considering the ancilla.
 
   Returns:
-      Gate: The Qiskit QuantumCircuit of the probability oracle "greater
-            (or equal) than" converted to a Gate object for it to be appended.
+      Gate: The Qiskit QuantumCircuit of the oracle "greater (or equal) than" 
+            converted to a Gate object for it to be appended.
   """
   circuit = QuantumCircuit(qubits+1, name=f'Oracle\n x>={number}')
 
@@ -68,9 +68,9 @@ def oracle_greatereq(number: int, qubits: int):
 
 def oracle_eq(number: int, qubits: int):
   """
-  Constructs a probability oracle that stores information in an ancilla about
-  whether or not a value is equal than a certain number. It is hermitian, so the
-  adjoint is effectively the same operator.
+  Constructs an oracle that stores information in an ancilla about whether or 
+  not a value is equal than a certain number. It is hermitian, so the adjoint 
+  is effectively the same operator.
 
   Args:
       number (int): The integer value (the specific target state) to be marked.
@@ -78,8 +78,8 @@ def oracle_eq(number: int, qubits: int):
                     considering the ancilla.
 
   Returns:
-      Gate: The Qiskit QuantumCircuit of the probability oracle "equal to"
-            converted to a Gate object for it to be appended.
+      Gate: The Qiskit QuantumCircuit of the oracle "equal to" converted to a 
+            Gate object for it to be appended.
   """
   circuit = QuantumCircuit(qubits+1, name=f'Oracle\n x={number}')
 
@@ -101,9 +101,9 @@ def oracle_eq(number: int, qubits: int):
 
 def oracle_interval(lower_number: int, higher_number: int, qubits: int):
   """
-  Constructs a probability oracle that stores information in an ancilla about
-  whether or not a value is inside the range [lower_number, higher_number).
-  It is hermitian, so the adjoint is effectively the same operator.
+  Constructs an oracle that stores information in an ancilla about whether or 
+  not a value is inside the range [lower_number, higher_number). It is hermitian,
+  so the adjoint is effectively the same operator.
 
   Args:
       lower_number (int): The lower integer value included in the interval.
@@ -112,8 +112,8 @@ def oracle_interval(lower_number: int, higher_number: int, qubits: int):
                     considering the ancilla.
 
   Returns:
-      Gate: The Qiskit QuantumCircuit of the probability oracle "greater
-            (or equal) than lower_number and less than higher_number"
+      Gate: The Qiskit QuantumCircuit of the oracle "greater (or equal) than 
+            lower_number and less than higher_number"
             converted to a Gate object for it to be appended.
   """
   circuit = QuantumCircuit(qubits+1,

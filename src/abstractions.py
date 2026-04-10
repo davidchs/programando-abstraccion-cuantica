@@ -37,7 +37,7 @@ def PhaseAND(main_circuit: QuantumCircuit, q_regs: list, qubits: int):
 
 def PhaseNAND(main_circuit: QuantumCircuit, q_regs: list, qubits: int):
   """
-  Performs boolean combination negation of clauses in conjunctive normal form to
+  Performs a negated boolean combination of clauses in conjunctive normal form to
   apply π-phase shift
 
   Args:
@@ -61,23 +61,17 @@ def PhaseNAND(main_circuit: QuantumCircuit, q_regs: list, qubits: int):
   # Invert whole subspace up to global phase
   circuit.rz(2*np.pi, target)
 
-  # COnvert to gate and append to main_circuit
+  # Convert to gate and append to main_circuit
   phase_and_gate = circuit.to_gate()
   gate_qubits = [qubit for reg in q_regs for qubit in reg]
   main_circuit.append(phase_and_gate, gate_qubits)
 
   return main_circuit
 
-# When using Grover, these abstractions are equivalent to their negations
-# as the algorithm functions up to global phase. The programmer needs to
-# consider that the amplification will be done on the minority subspace.
-# That is, if the PhaseNOR gate is applied but it marks most states, then the
-# ones that satisfy the OR relation will be amplified instead.
-
 def PhaseNOR(main_circuit: QuantumCircuit, q_regs: list, qubits: int):
   """
-  Performs boolean combination of clauses in disjunctive normal form to apply
-  π-phase shift.
+  Performs a negated boolean combination of clauses in disjunctive normal form to 
+  apply π-phase shift.
 
   Args:
         main_circuit (QuantumCircuit): The Qiskit QuantumCircuit object to which
@@ -121,7 +115,7 @@ def PhaseNOR(main_circuit: QuantumCircuit, q_regs: list, qubits: int):
 
 def PhaseOR(main_circuit: QuantumCircuit, q_regs: list, qubits: int):
   """
-  Performs boolean combination negation of clauses in disjunctive normal form to
+  Performs boolean combination of clauses in disjunctive normal form to
   apply π-phase shift.
 
   Args:
