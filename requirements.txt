@@ -1,3 +1,4 @@
+# Libraries versions for executing the code (required python">=3.10")
 qiskit==2.3.1
 qiskit-aer==0.17.2
 qiskit-ibm-runtime==0.46.1
