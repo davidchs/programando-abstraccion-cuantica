@@ -10,3 +10,9 @@ __pycache__/
 
 # Results and local data
 results/
+
+# Construction and packaging artifacts
+*.egg-info/
+.eggs/
+build/
+dist/

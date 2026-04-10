@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quantum-smt-solver"
+version = "0.1.0"
+description = "Resolutor SMT cuántico basado en abstracciones para la programación"
+authors = [
+    {name = "David Chamizo", email = "davidchs@unex.es"}
+]
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
