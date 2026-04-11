@@ -8,9 +8,6 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 
-# Results and local data
-results/
-
 # Construction and packaging artifacts
 *.egg-info/
 .eggs/
