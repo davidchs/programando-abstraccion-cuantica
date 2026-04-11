@@ -21,7 +21,7 @@ def diffuser(main_circuit: QuantumCircuit, q_regs: list, qubits: int):
         """
         circuit = QuantumCircuit(*q_regs, name='Grover\n Diffuser')
 
-        # Undo the entanglement (GHZ_Init^dagger)
+        # Undo the entanglement following the initialization (Init^dagger)
         for i in range(qubits):
         # Apply CNOTs in reverse and then Hadamards
           for j in range(1, len(q_regs)):
@@ -55,24 +55,25 @@ def diffuser(main_circuit: QuantumCircuit, q_regs: list, qubits: int):
 
         return main_circuit
 
-def ghz_init(main_circuit: QuantumCircuit, q_regs: list, qubits: int):
+def init(main_circuit: QuantumCircuit, q_regs: list, qubits: int):
   """
-  Encapsulates the preparation of a GHZ-like entangled state across the qubits
-  of all provided registers.
+  Encapsulates the initialization of an entangled state across the qubits of 
+  all provided registers, such as all represent the same variable in 
+  parallel.
 
   Args:
       main_circuit (QuantumCircuit): The Qiskit QuantumCircuit object to which
-                                     the GHZ-like state preparation is applied.
+                                     the state initialization is applied.
       q_regs (list): A list of QuantumRegister objects.
       qubits (int): The total number of qubits in each register, including the
                     ancilla qubit.
 
   Returns:
       QuantumCircuit: The modified Qiskit QuantumCircuit object after the
-                      GHZ-like state preparation.
+                      state initialization.
   """
-  circuit = QuantumCircuit(*q_regs, name="GHZ_Init")
-  # GHZ-like states between registers
+  circuit = QuantumCircuit(*q_regs, name="Init")
+  # GHZ-like states between i-th qubit of each registers
   for i in range(qubits-1):
       # Apply Hadamard to the i-th qubit on first register
       circuit.h(q_regs[0][i])
@@ -82,10 +83,10 @@ def ghz_init(main_circuit: QuantumCircuit, q_regs: list, qubits: int):
       for j in range(1, len(q_regs)):
           circuit.cx(q_regs[0][i], q_regs[j][i])
 
-  # Convert GHZ_Init to gate
+  # Convert Init to gate
   ghz_init_gate = circuit.to_gate()
 
-  # Apply GHZ_Init to all qubits of the circuit
+  # Apply Init to all qubits of the circuit
   gate_qubits = [qubit for reg in q_regs for qubit in reg]
   main_circuit.append(ghz_init_gate, gate_qubits)
 
