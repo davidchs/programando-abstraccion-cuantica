@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "quantum-smt-solver"
-version = "0.1.0"
+version = "0.1.3"
 description = "Quantum SMT solver based on abstractions for quantum programming"
 authors = [
     {name = "David Chamizo", email = "davidchs@unex.es"}
