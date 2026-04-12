@@ -116,7 +116,7 @@ def oracle_interval(lower_number: int, higher_number: int, qubits: int,
 
   Returns:
       Gate: The Qiskit QuantumCircuit of the oracle "greater (or equal) than 
-            lower_number and less than higher_number"
+            lower_number and less than higher_number" 
             converted to a Gate object for it to be appended.
   """
   # Reusing the less-than oracle and greater (or equal) than oracle
