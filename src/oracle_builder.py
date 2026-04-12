@@ -99,7 +99,8 @@ def oracle_eq(number: int, qubits: int):
 
   return circuit.to_gate()
 
-def oracle_interval(lower_number: int, higher_number: int, qubits: int):
+def oracle_interval(lower_number: int, higher_number: int, qubits: int,
+                    outer: bool = False):
   """
   Constructs an oracle that stores information in an ancilla about whether or 
   not a value is inside the range [lower_number, higher_number). It is hermitian,
@@ -110,19 +111,26 @@ def oracle_interval(lower_number: int, higher_number: int, qubits: int):
       higher_number (int): The higher boundary of the interval.
       qubits (int): The total number of qubits in the oracle register, without
                     considering the ancilla.
+      outer (bool): Boolean that determines whether the interval is addressed
+                    in between the input numbers or outside of it.
 
   Returns:
       Gate: The Qiskit QuantumCircuit of the oracle "greater (or equal) than 
             lower_number and less than higher_number"
             converted to a Gate object for it to be appended.
   """
-  circuit = QuantumCircuit(qubits+1,
-                           name=f'Oracle\n x∈[{lower_number},{higher_number})')
-
   # Reusing the less-than oracle and greater (or equal) than oracle
   gate_qubits = list(range(qubits + 1))
-  circuit.append(oracle_less(higher_number, qubits), gate_qubits)
-  circuit.append(oracle_greatereq(lower_number, qubits), gate_qubits)
+  if outer:
+    circuit = QuantumCircuit(qubits+1,
+                           name=f'Oracle\n x∉[{lower_number},{higher_number})')
+    circuit.append(oracle_less(lower_number, qubits), gate_qubits)
+    circuit.append(oracle_greatereq(higher_number, qubits), gate_qubits)
+  else:
+    circuit = QuantumCircuit(qubits+1,
+                           name=f'Oracle\n x∈[{lower_number},{higher_number})')
+    circuit.append(oracle_less(higher_number, qubits), gate_qubits)
+    circuit.append(oracle_greatereq(lower_number, qubits), gate_qubits)
 
   # Invert the ancilla value to effectively mark the states
   # for the interval instance
