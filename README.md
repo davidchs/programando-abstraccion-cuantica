@@ -69,7 +69,7 @@ Este proyecto se distribuye de forma abierta bajo la licencia MIT.
 
 ## Referencias
 
-> Qiskit Development Team. (2026). Qiskit: An open-source framework for quantum computing (Version 2.3.1). [https://github.com/Qiskit/qiskit](https://github.com/Qiskit/qiskit) [https://doi.org/10.5281/zenodo.2562111](https://doi.org/10.5281/zenodo.2562111)
+> Qiskit Development Team. (2026). Qiskit: An open-source framework for quantum computing (Version 2.3.1). [https://github.com/Qiskit/qiskit](https://github.com/Qiskit/qiskit)
 
 > Lin, S. W., Wang, T. F., Chen, Y. R., Hou, Z., Sanán, D., & Teo, Y. S. (2023). A parallel and distributed quantum SAT solver based on entanglement and quantum teleportation. arXiv preprint arXiv:2308.03344. [https://doi.org/10.48550/arXiv.2308.03344](https://doi.org/10.48550/arXiv.2308.03344)
 
