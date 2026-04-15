@@ -38,7 +38,7 @@ Ejecute los siguientes comandos en la terminal de su sistema:
 
 1. **Clonación del repositorio:**
    ```bash
-   git clone [https://github.com/davidchs/programando-abstraccion-cuantica.git](https://github.com/davidchs/programando-abstraccion-cuantica.git)
+   git clone https://github.com/davidchs/programando-abstraccion-cuantica.git
    cd programando-abstraccion-cuantica
    ```
 
