@@ -54,14 +54,7 @@ Ejecute los siguientes comandos en la terminal de su sistema:
     pip install -e .
     ```
 
-Una vez configurado el entorno, todo el código base contenido en la carpeta `src/` estará disponible para ser invocado desde cualquier cuaderno en la carpeta `notebooks/`.
-
-Para iniciar el entorno interactivo:
-```bash
-jupyter notebook
-```
-
-Asegúrese de seleccionar el kernel `.venv` en su editor.
+Una vez configurado el entorno, todo el código base contenido en la carpeta `src/` estará disponible para ser invocado desde cualquier cuaderno en la carpeta `notebooks/`. Asegúrese de seleccionar el kernel `.venv` en su editor.
 
 ## Licencia
 
