@@ -67,3 +67,8 @@ Este proyecto se distribuye de forma abierta bajo la licencia MIT.
 > Lin, S. W., Wang, T. F., Chen, Y. R., Hou, Z., Sanán, D., & Teo, Y. S. (2023). A parallel and distributed quantum SAT solver based on entanglement and quantum teleportation. arXiv preprint arXiv:2308.03344. [https://doi.org/10.48550/arXiv.2308.03344](https://doi.org/10.48550/arXiv.2308.03344)
 
 > Sanchez-Rivero, J., Talaván, D., Garcia-Alonso, J., Ruiz-Cortés, A., & Murillo, J. M. (2025). Automatic generation of efficient oracles: The less-than case. Journal of Systems and Software, 219, 112203 [https://doi.org/10.1016/j.jss.2024.112203](https://doi.org/10.1016/j.jss.2024.112203)
+
+## Versión extendida
+
+Una versión extendida de este trabajo se encuentra disponible en Zenodo como parte de un trabajo presentado a IEEE QCE 2026:
+> Chamizo, D., Garcia-Alonso, J., & Murillo, J. M. (2026). High-level quantum structured programs as quantum registers compositions (1.0.1). Zenodo. [https://doi.org/10.5281/zenodo.19762070](https://doi.org/10.5281/zenodo.19762070)
